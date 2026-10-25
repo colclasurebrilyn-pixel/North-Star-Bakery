@@ -25,18 +25,23 @@
     <h1>Get in touch or plan a pre-order</h1>
     <div class="content-grid">
       <p>Questions, celebration plans, or a loaf to set aside? Send us a request and our bakery team will follow up to confirm availability.</p>
-      <form id="preorder-form" action="#" method="get">
+      <form id="preorder-form" action="#" method="get" novalidate>
         <fieldset>
           <legend>Your contact details</legend>
-          <label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required minlength="2">
-          <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="name-error">
+          <span id="name-error" class="field-error"></span>
+          <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+          <span id="email-error" class="field-error"></span>
         </fieldset>
         <fieldset>
           <legend>Request details</legend>
           <label for="request-type">What can we help with?</label>
-          <select id="request-type" name="request-type" required><option value="">Choose one</option><option value="pre-order">Pre-order</option><option value="question">General question</option><option value="event">Event or cake inquiry</option></select>
-          <label for="pickup-date">Requested pickup date</label><input id="pickup-date" name="pickup-date" type="date" required>
-          <label for="details">Items and quantity</label><textarea id="details" name="details" rows="4" required minlength="5" placeholder="Tell us what you have in mind"></textarea>
+          <select id="request-type" name="request-type" required aria-describedby="request-type-error"><option value="">Choose one</option><option value="pre-order">Pre-order</option><option value="question">General question</option><option value="event">Event or cake inquiry</option></select>
+          <span id="request-type-error" class="field-error"></span>
+          <label for="pickup-date">Requested pickup date</label><input id="pickup-date" name="pickup-date" type="date" required aria-describedby="pickup-date-error">
+          <span id="pickup-date-error" class="field-error"></span>
+          <label for="details">Items and quantity</label><textarea id="details" name="details" rows="4" required minlength="5" placeholder="Tell us what you have in mind" aria-describedby="details-error"></textarea>
+          <span id="details-error" class="field-error"></span>
           <label for="allergies">Allergy notes (optional)</label><textarea id="allergies" name="allergies" rows="3" placeholder="List any ingredients we should know about"></textarea>
         </fieldset>
         <button type="submit">Send request</button>
@@ -49,16 +54,6 @@
     <p>North Star Bakery · 18 Cedar Street, Minneapolis, MN · (612) 555-0148</p>
     <p>Open Tuesday–Sunday, 7 a.m.–3 p.m. · Closed Monday</p>
   </footer>
-  <script>
-    const preorderForm = document.querySelector('#preorder-form');
-    const formStatus = document.querySelector('#form-status');
-
-    preorderForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const name = new FormData(preorderForm).get('name').trim();
-      formStatus.textContent = `Thanks, ${name}. Your request is ready for the bakery team to review.`;
-      preorderForm.reset();
-    });
-  </script>
+  <script src="app.js" defer></script>
 </body>
 </html>

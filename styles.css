@@ -84,6 +84,10 @@ button {
   font: inherit; font-weight: 700; cursor: pointer;
 }
 button:hover { background: var(--brown); color: var(--cream); }
+.filter-options { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.filter-options button[aria-pressed="true"] { background: var(--brown); color: var(--cream); }
+.field-error { min-height: 1.4em; color: #9B2C20; font-size: 0.92rem; font-weight: 700; }
+input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] { border: 2px solid #9B2C20; }
 .text-link { font-weight: 700; }
 .form-status { min-height: 1.65em; margin: 0.9rem 0 0; color: var(--accent-dark); font-weight: 700; }
 .site-footer { padding: 1.2rem 1rem; background: var(--brown); color: var(--cream); text-align: center; }

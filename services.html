@@ -24,9 +24,20 @@
     <h1>Bread, pastries, and cakes</h1>
     <div class="content-grid">
     <p>Our menu changes with the season. Stop by for today’s selection or contact us about a pre-order.</p>
-    <section><h2>Breads · $6–$12</h2><p>Long-fermented sourdough, seeded country loaves, and soft sandwich bread baked fresh each morning.</p><img src="assets/bakery-bread.png" alt="Rustic freshly baked artisan bread"></section>
-    <section><h2>Pastries · $3–$7</h2><p>Butter croissants, morning buns, and fruit pastries made in small batches.</p></section>
-    <section><h2>Cakes · $28–$65</h2><p>Celebration cakes for birthdays and gatherings. Prices vary by size and decoration; please inquire in advance.</p></section>
+    <section class="product-filters" aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Browse the menu</h2>
+      <p>Choose a category to find what you’re looking for. Your choice will be remembered on this device.</p>
+      <div class="filter-options" role="group" aria-label="Filter products by category">
+        <button type="button" data-filter="all" aria-pressed="true">All products</button>
+        <button type="button" data-filter="bread" aria-pressed="false">Breads</button>
+        <button type="button" data-filter="pastry" aria-pressed="false">Pastries</button>
+        <button type="button" data-filter="cake" aria-pressed="false">Cakes</button>
+      </div>
+      <p id="filter-status" class="form-status" role="status" aria-live="polite"></p>
+    </section>
+    <section id="breads" class="product-category"><h2>Breads · $6–$12</h2><p>Long-fermented sourdough, seeded country loaves, and soft sandwich bread baked fresh each morning.</p><img src="assets/bakery-bread.png" alt="Rustic freshly baked artisan bread"></section>
+    <section id="pastries" class="product-category"><h2>Pastries · $3–$7</h2><p>Butter croissants, morning buns, and fruit pastries made in small batches.</p></section>
+    <section id="cakes" class="product-category"><h2>Cakes · $28–$65</h2><p>Celebration cakes for birthdays and gatherings. Prices vary by size and decoration; please inquire in advance.</p></section>
     <figure><img src="assets/bakery-signature-loaf.png" alt="North Star Bakery’s signature golden-crusted sourdough loaf"><figcaption>Our Signature Loaf: a naturally leavened favorite with a crisp crust and tender crumb.</figcaption></figure>
     <p><a href="contact.html">Ask about availability or request a pre-order.</a></p>
     </div>
@@ -35,5 +46,6 @@
     <p>North Star Bakery · 18 Cedar Street, Minneapolis, MN · (612) 555-0148</p>
     <p>Open Tuesday–Sunday, 7 a.m.–3 p.m. · Closed Monday</p>
   </footer>
+  <script src="app.js" defer></script>
 </body>
 </html>
